@@ -1,0 +1,115 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Orders Grocery-Hut</title>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"/>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous"/>
+        <link rel="stylesheet" type="text/css" href="css/vendor.css"/>
+        <link rel="stylesheet" type="text/css" href="Cart.css"/>
+
+        <link rel="preconnect" href="https://fonts.googleapis.com"/>
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous"/>
+        <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&amp;family=Open+Sans:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap;" rel="stylesheet"/>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    </h:head>
+    <h:body>
+        <f:metadata>
+            <f:event type="preRenderView" listener="#{navigationCDI.checkUser()}"/>
+        </f:metadata>
+        <ui:insert name="uHeader">
+            <ui:include src="Header.xhtml"/>
+        </ui:insert>
+        <section class="py-5 ">
+            <div class="container-fluid main">
+                <h1>Orders</h1>
+                <hr/>
+                <div class="row">
+                    <div class="col-md-12">
+                        <h:form>
+                            <ui:repeat value="#{userCDI.allOrder}" var="o">
+                                <div class="row">
+                                    <div class="product-item">
+                                        <div class="col-2">
+                                            <figure>
+                                                <a href="single-product.html" title="Product Title">
+                                                    <img src="../images/product/#{o.PId.PImage}"  class="tab-image"/>
+                                                </a>
+                                            </figure>
+                                        </div>
+                                        <div class="col-10 row">
+                                            <div class="col-2 description">
+                                                <h3>#{o.PName}</h3>
+                                                <span class="">#{o.PId.unit} Unit</span>
+                                                <span class="price">By, #{o.PId.BId.BName}</span>
+                                            </div>
+                                            <div class="col-1  d-flex justify-content-center description">
+                                                <div>
+                                                    <h3 class="small text-muted mb-4 pb-2 ">Qty</h3>
+                                                    
+                                                    
+                                                    
+                                                    <p class="lead fw-normal mb-0 qty"  >#{o.PQty}</p>
+                                                   
+                                                </div>  
+                                            </div>
+                                            <div class="col-1  d-flex justify-content-center other">
+                                                <div>
+                                                    <h3 class="small text-muted mb-4 pb-2">price</h3>
+                                                    <p class="lead fw-normal mb-0">#{o.PId.ammount}</p>
+                                                </div>&nbsp;  
+                                            </div>
+                                            <div class="col-1  d-flex justify-content-center other">
+                                                <div>
+                                                    <h3 class="small text-muted mb-4 pb-2">Tax :#{o.PId.tax}</h3>
+                                                    <p class="lead fw-normal mb-0">Tax Amount :#{o.taxAmt}</p>
+                                                </div>  
+                                            </div>
+                                            <div class="col-2  d-flex justify-content-center other">
+                                                <div>
+                                                    <h3 class="small text-muted mb-4 pb-2">GST :#{o.PId.gst }</h3>
+                                                    <p class="lead fw-normal mb-0">GST Amount :#{o.gstAmt}</p>
+                                                </div>  
+                                            </div>
+
+                                             <div class="col-2  d-flex justify-content-center other">
+                                                <div>
+                                                    <h3 class="small text-muted mb-4 pb-2">SGST :#{o.PId.sgst }</h3>
+                                                    <p class="lead fw-normal mb-0">SGST Amount#{o.sgstAmt}</p>
+                                                </div>  
+                                            </div>
+                                            <div class="col-12 row  d-flex justify-content-center other">
+                                                <div class="col-8">
+                                                    <h3>Total Ammount :</h3>
+                                                </div>  
+                                                <div class="col-4">
+                                                    <h3>#{o.amt}</h3>
+                                                </div>  
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </ui:repeat>
+                           
+                        </h:form>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+        <ui:insert name="ufooter">
+            <ui:include src="Footer.xhtml"/>
+        </ui:insert>
+
+        <script src="js/jquery-1.11.0.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+                integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
+        crossorigin="anonymous"></script>
+        <script src="js/plugins.js"></script>
+        <script src="js/script.js"></script>
+    </h:body>
+</html>

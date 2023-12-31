@@ -1,0 +1,9 @@
+com\mycompany\imgaeupload\resources\JavaEE8Resource.class
+com\mycompany\imgaeupload\JAXRSConfiguration.class
+Bean\PersonBean$1.class
+Ejb\UploadLocal.class
+Ejb\Upload.class
+Entity\Person.class
+Bean\PersonBean.class
+Client\UploadClient.class
+rest\ipath.class

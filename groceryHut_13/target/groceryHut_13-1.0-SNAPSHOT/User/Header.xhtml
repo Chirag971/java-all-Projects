@@ -1,0 +1,109 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+    <h:head>
+        <title>Facelet Title</title>
+    </h:head>
+    <h:body>
+        <ui:composition>
+            <header>
+                <div class="container-fluid">
+                    <div class="row py-3 border-bottom">
+
+                        <div class="col-sm-4 col-lg-3 text-center text-sm-start">
+                            <div class="main-logo">
+                                <a href="index.html">
+                                    <img src="images/grocerylogo.png" alt="logo"  height="90" width="150"/>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-6 offset-sm-2 offset-md-0 col-lg-5 d-none d-lg-block">
+
+                        </div>
+
+                        <div class="col-sm-8 col-lg-4 d-flex justify-content-end gap-5 align-items-center mt-4 mt-sm-0 justify-content-center justify-content-sm-end">
+                            <div class="support-box text-end d-none d-xl-block">
+                                <span class="fs-6 text-muted">For Support?</span>
+                                <h5 class="mb-0">+91-24674708</h5>
+                            </div>
+                            <ul class="d-flex justify-content-end list-unstyled m-0">
+                                <li>
+                                    <a href="#" class="rounded-circle bg-light p-2 mx-1">
+                                    
+                                        <i class="fa-solid fa-user fa-xl"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="/groceryHut_13/User/Cart.jsf" class="rounded-circle bg-light p-2 mx-1">
+                                        <i class="fa-solid fa-cart-shopping fa-xl"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="/groceryHut_13/Logout.jsf" class="rounded-circle bg-light p-2 mx-1">
+                                    
+                                        <i class="fa-solid fa-right-from-bracket fa-xl"></i> 
+                                    </a>
+                                </li>
+
+                            </ul>
+
+                        </div>
+
+                    </div>
+                </div>
+                <div class="container-fluid">
+                    <div class="row py-3">
+                        <div class="d-flex  justify-content-center justify-content-sm-between align-items-center">
+                            <nav class="main-menu d-flex navbar navbar-expand-lg">
+
+                                <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
+                                        aria-controls="offcanvasNavbar">
+                                    <span class="navbar-toggler-icon"></span>
+                                </button>
+
+                                <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+
+                                    <div class="offcanvas-header justify-content-center">
+                                        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                                    </div>
+
+                                    <div class="offcanvas-body">
+
+                                        
+
+                                        <ul class="navbar-nav justify-content-end menu-list list-unstyled d-flex gap-md-3 mb-0">
+                                            <li class="nav-item dropdown">
+                                                <a href="/groceryHut_13/User/Home.jsf" class="nav-link">Home</a>
+                                            </li>
+                                            <li class="nav-item active">
+                                                <a href="/groceryHut_13/User/Products.jsf" class="nav-link">Products</a>
+                                            </li>
+                                            <li class="nav-item active">
+                                                <a href="/groceryHut_13/User/Orders.jsf" class="nav-link">Your Orders</a>
+                                            </li>
+                                             <li class="nav-item active">
+                                                <a href="/groceryHut_13/User/getintouch.jsf" class="nav-link">Get In Touch</a>
+                                            </li>
+                                             <li class="nav-item active">
+                                                <a href="/groceryHut_13/Login.jsf" class="nav-link">Login</a>
+                                            </li>
+                                            
+                                        </ul>
+
+                                    </div>
+
+                                </div>
+
+                            </nav>
+                           
+                        </div>
+                    </div>
+                </div>
+            </header>
+            <hr/>
+        </ui:composition>
+    </h:body>
+</html>

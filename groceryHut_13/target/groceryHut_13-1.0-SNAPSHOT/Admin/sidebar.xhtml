@@ -1,0 +1,72 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+
+    </h:head>
+    <h:body>
+        <ui:composition>
+            <f:metadata>
+                <f:event type="preRenderView" listener="#{navigationCDI.checkAdmin()}"/>
+            </f:metadata>
+            <div id="layoutSidenav_nav">
+                <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
+                    <div class="sb-sidenav-menu">
+                        <div class="nav">
+                            <a class="nav-link" href="/groceryHut_13/Admin/Dashboard.jsf">
+                                <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
+                                Dashboard
+                            </a>   
+                        </div>
+                        <div class="nav">
+                            <a class="nav-link" href="/groceryHut_13/Admin/Category.jsf">
+                                <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
+                                Manage Category
+                            </a>   
+                        </div>
+                        <div class="nav">
+                            <a class="nav-link" href="/groceryHut_13/Admin/Brand.jsf">
+                                <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
+                                Manage Brand
+                            </a>   
+                        </div>
+                        <div class="nav">
+                            <a class="nav-link" href="/groceryHut_13/Admin/Product.jsf">
+                                <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
+                                Manage Product
+                            </a>   
+                        </div>
+                        <div class="nav">
+                            <a class="nav-link" href="/groceryHut_13/Admin/Orders.jsf">
+                                <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
+                                Orders
+                            </a>   
+                        </div>
+                        <div class="nav">
+                            <a class="nav-link" href="/groceryHut_13/Admin/User.jsf">
+                                <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
+                                Users
+                            </a>   
+                        </div>
+                         <div class="nav">
+                            <a class="nav-link" href="/groceryHut_13/Admin/GetInTouch.jsf">
+                                <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
+                                Get In Touch
+                            </a>   
+                        </div>
+                    </div>
+                    <div class="sb-sidenav-footer">
+                        <div class="small">Logged in as:</div>
+                        #{sessionScope.Admin}
+                    </div>
+                </nav>
+            </div>
+
+
+        </ui:composition>
+
+    </h:body>
+</html>

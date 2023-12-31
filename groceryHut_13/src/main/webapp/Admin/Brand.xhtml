@@ -1,0 +1,132 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+  <h:head>
+        <title>Manage Brand - Grocery Hut</title>
+        <link href="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/style.min.css" rel="stylesheet" />
+        <link href="css/styles.css" rel="stylesheet" />
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" />
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"></script>
+
+        <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+         <style>
+            .line{
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                margin-top: 10px;
+                margin-left: 15px
+            }
+        </style>
+    </h:head>
+     <h:body styleClass="sb-nav-fixed">
+         <f:metadata>
+            <f:event type="preRenderView" listener="#{navigationCDI.checkAdmin()}"/>
+        </f:metadata>
+        <ui:insert name="header">
+            <ui:include src="topbar.xhtml" />
+        </ui:insert>
+        <div id="layoutSidenav">
+            <ui:insert name="sidebar">
+                <ui:include src="sidebar.xhtml"/>
+            </ui:insert>
+            <div id="layoutSidenav_content">
+                <main>
+                    <div class="container-fluid px-4">
+                        <h1 class="mt-4">Manage Brand</h1>
+                         <div class="line">
+                            <div>
+                            </div>
+                            <div>
+                                <!-- Button trigger modal -->
+                                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                    Add Brand
+                                </button>
+
+                                <!-- Modal -->
+                                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title" id="exampleModalLabel">Add Brand</h5>
+                                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                            </div>
+                                            <div class="modal-body">
+                                                 <f:view>
+                                                    <h:form enctype="multipart/form-data">
+                                                        <div class="col-12 mb-2 opcity">
+                                                            <div class="form-floating mb-3">
+                                                                <h:inputText id="bName" value="#{adminCDI.bname}" class="form-control" title="CName" required="true" requiredMessage="The CName field is required."/>
+                                                                <h:outputLabel value="Brand Name" for="CName" />                          
+                                                            </div>
+                                                        </div>
+                                                        
+                                                        <div class="d-grid">
+                                                            <h:commandButton value="ADD" styleClass="btn btn-success btn-block" action="#{adminCDI.insertBrand()}"/></div>
+                                                    </h:form>
+                                                </f:view>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                            </div>
+                        </div>
+                        
+                        <div class="card mt-lg-4">
+                            <div class="card-body">
+                                <table id="datatablesSimple">
+                                    <thead>
+                                        <tr>
+                                            <th>Brand Name</th>
+                                            <th>Operations</th>
+
+                                        </tr>
+                                    </thead>
+                                    <tfoot>
+                                        <tr>
+                                            <th>Brand Name</th>
+                                            <th>Operations</th>
+                                        </tr>
+                                    </tfoot>
+                                    <tbody>
+
+
+                                        <ui:repeat value="#{adminCDI.allBrands}" var="b">
+                                            <tr>
+                                                <td>#{b.BName}</td>
+                                                <td>
+                                                    <h:form> 
+                                                        <h:commandButton styleClass="btn btn-danger btn-sm" value="Delete"  action="#{adminCDI.deleteBrand(b.BId.toString())}"  /> &nbsp;
+                                                        <h:commandButton styleClass="btn btn-warning btn-sm" value="Update"  action="#{adminCDI.getBByID(b.BId.toString())}"  />
+                                                    </h:form></td>
+                                            </tr>
+
+                                        </ui:repeat>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </main>    
+            </div>
+        </div>
+         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+        <script src="js/scripts.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js" crossorigin="anonymous"></script>
+        <script src="assets/demo/chart-area-demo.js"></script>
+        <script src="assets/demo/chart-bar-demo.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/umd/simple-datatables.min.js" crossorigin="anonymous"></script>
+        <script src="js/datatables-simple-demo.js"></script>
+    </h:body>
+</html>
