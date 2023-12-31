@@ -1,0 +1,9 @@
+beans\LoginBean.class
+com\mycompany\securityjsf\JAXRSConfiguration.class
+rest\SecureResource.class
+filter\RestFilter.class
+config\Project.class
+ejb\SecureBean.class
+beans\HelloBean.class
+com\mycompany\securityjsf\resources\JavaEE8Resource.class
+client\SecureClient.class
