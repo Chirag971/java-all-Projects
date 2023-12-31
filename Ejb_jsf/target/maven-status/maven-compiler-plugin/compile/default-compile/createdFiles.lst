@@ -1,0 +1,7 @@
+com\mycompany\ejb_jsf\JAXRSConfiguration.class
+Ejb\EmpEJb.class
+Entity\Employee.class
+Ejb\EmpEJbLocal.class
+Entity\Employee_.class
+Bean\empBean.class
+com\mycompany\ejb_jsf\resources\JavaEE8Resource.class

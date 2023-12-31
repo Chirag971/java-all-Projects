@@ -1,0 +1,26 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Facelet Title</title>
+    </h:head>
+    <h:body>
+        <f:view>
+            <h:form>
+                <h1><h:outputText value="Create/Edit"/></h1>
+                <h:panelGrid columns="2">
+                    <h:outputLabel value="EmpId:" for="empId" />
+                    <h:inputText id="empId" value="#{empBean.employee.empId}" title="EmpId" required="true" requiredMessage="The EmpId field is required."/>
+                    <h:outputLabel value="Name:" for="name" />
+                    <h:inputText id="name" value="#{empBean.employee.name}" title="Name" required="true" requiredMessage="The Name field is required."/>
+                    <h:outputLabel value="Role:" for="role" />
+                    <h:inputText id="role" value="#{empBean.employee.role}" title="Role" required="true" requiredMessage="The Role field is required."/>
+                    <h:commandButton value="Update" action="#{empBean.Update(empBean.employee.empId, empBean.employee.name, empBean.employee.role)}"/>
+                </h:panelGrid>
+            </h:form>
+        </f:view>
+
+    </h:body>
+</html>
