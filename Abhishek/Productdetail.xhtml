@@ -1,0 +1,397 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+    <h:head>
+        <title>HomeDecor | ProductDetails</title>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="author" content="TemplatesJungle" />
+        <meta name="keywords" content="ecommerce,herbal tea,shop" />
+        <meta name="description" content="Bootstrap 5 Tea Shop HTML CSS Template" />
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ"
+            crossorigin="anonymous"
+            />
+        <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"
+            />
+        <link rel="stylesheet" type="text/css" href="css/vendor.css" />
+        <link rel="stylesheet" type="text/css" href="style.css" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" name="crossorigin" />
+        <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100;0,200;0,300;0,400;0,500;1,100;1,200;1,300;1,400;1,500&amp;family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&amp;display=swap" rel="stylesheet" />
+        <script src="js/modernizr.js"></script>
+    </h:head>
+    <h:body>
+        <ui:composition template="main.xhtml">
+            <ui:define name="content">
+                <f:metadata>
+                    <f:viewParam name="productid" value="#{customerBean.productid}" />
+                    <f:event type="preRenderView" listener="#{customerBean.loadItemDetails()}" />
+                </f:metadata>
+                
+                
+                <section class="hero-section position-relative jarallax" style="min-height: 390px;">
+            <img
+                style="filter: brightness(0.5) !important"
+                src="https://plus.unsplash.com/premium_photo-1670360414483-64e6d9ba9038?ixlib=rb-4.0.3&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&amp;auto=format&amp;fit=crop&amp;w=2070&amp;q=80"
+                class="jarallax-img"
+                alt="product_logo_img"
+                />
+
+
+            <div
+                class="hero-content position-absolute d-flex justify-content-center align-items-center text-center"
+                >
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h1 class="page-title text-light fst-italic">Product Detail</h1>
+                            <div class="breadcrumbs text-light">
+                                <span class="item">
+                                    <a href="Home.jsf" class="text-light">Home </a>
+                                </span>
+                                <span class="item">Product Detail</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="selling-product" class="single-product">
+            <div class="container-lg">
+                <div class="row mt-5">
+                    <div class="col-lg-6 col-md-6">
+                        <div class="product-preview mb-3">
+                            <img style="height: 600px" class="container-fluid" src="./ProductImages/#{customerBean.image}" alt="moye-moye" />
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-6">
+                        <div class="product-info">
+                            <div class="element-header">
+                                <h3 itemprop="name" class="display-6 fst-italic mb-0">
+                                    ${customerBean.productname}
+                                </h3>
+                            </div>
+                            <div class="product-price pt-3 pb-3">
+                                <strong
+                                    class="text-primary display-6 myFont"
+                                    style="font-weight: 700"
+                                    >₹ #{customerBean.price}</strong
+                                >
+
+                            </div>
+                            <p>
+                                #{customerBean.description}
+                            </p>
+                            <h:form>    
+                                <!--<h:inputText  id="quantity4"  class="form-control input-number" value="#{sessionScope.user} "/>-->
+                                <h:inputText  id="quantity1"  class="form-control input-number" value="#{customerBean.qty}"/>
+                                <h:inputText id="quantity2" class="form-control input-number" value="#{customerBean.productid}" />
+                                <h:inputText id="quantity3" class="form-control input-number" value="#{customerBean.price}"/>
+                                <h:commandButton class="btn btn-primary btn-addtocart" value="addtocart" action="#{customerBean.addToCart()}"></h:commandButton>
+                            </h:form>
+
+                            <div class="meta-product py-2">
+                                <div class="meta-item d-flex align-items-baseline">
+                                    <h4 class="item-title fs-5 pe-2">Seller :</h4>
+                                    <ul class="select-list list-unstyled d-flex">
+                                        <li data-value="S" class="select-item">abc</li>
+                                    </ul>
+                                </div>
+
+                                <div class="meta-item d-flex align-items-baseline">
+                                    <h4 class="item-title fs-5 pe-2">Category :</h4>
+                                    <ul class="select-list list-unstyled d-flex">
+                                        <li data-value="S" class="select-item">
+                                            <a href="#">Decore , </a>
+                                        </li>
+                                        <li data-value="S" class="select-item">
+                                            <a href="#">Product , </a>
+                                        </li>
+                                        <li data-value="S" class="select-item">
+                                            <a href="#">Abc</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="product-info-tabs py-lg-7">
+            <div class="container-lg">
+                <div class="row">
+                    <div class="tabs-listing">
+                        <nav>
+                            <div
+                                class="nav nav-tabs d-flex flex-wrap justify-content-center"
+                                id="nav-tab"
+                                role="tablist"
+                                >
+                                <button
+                                    class="nav-link text-uppercase fw-medium active"
+                                    id="nav-home-tab"
+                                    data-bs-target="#nav-home"
+                                    type="button"
+                                    role="tab"
+                                    aria-controls="nav-home"
+                                    aria-selected="true"
+                                    >
+                                    Description
+                                </button>
+                                <button
+                                    class="nav-link text-uppercase fw-medium"
+                                    id="nav-information-tab"
+                                    data-bs-toggle="tab"
+                                    data-bs-target="#nav-information"
+                                    type="button"
+                                    role="tab"
+                                    aria-controls="nav-information"
+                                    aria-selected="false"
+                                    tabindex="-1"
+                                    >
+                                    Additional Info
+                                </button>
+                                <button
+                                    class="nav-link text-uppercase fw-medium"
+                                    id="nav-review-tab"
+                                    data-bs-toggle="tab"
+                                    data-bs-target="#nav-review"
+                                    type="button"
+                                    role="tab"
+                                    aria-controls="nav-review"
+                                    aria-selected="false"
+                                    tabindex="-1"
+                                    >
+                                    Reviews
+                                </button>
+                            </div>
+                        </nav>
+                        <div class="tab-content" id="nav-tabContent">
+                            <div
+                                class="tab-pane fade show active border-top border-bottom py-4"
+                                id="nav-home"
+                                role="tabpanel"
+                                aria-labelledby="nav-home-tab"
+                                >
+                                <p>
+                                    #{customerBean.description}
+                                </p>
+                                <ul style="list-style-type: disc" class="list-unstyled ps-3">
+                                    <li>"Donec nec justo eget felis facilisis fermentum.</li>
+                                    <li>Suspendisse urna viverra non, semper suscipit pede.</li>
+                                    <li>Aliquam porttitor mauris sit amet orci.</li>
+                                </ul>
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                                    Dolorum repellat enim libero accusamus odio. Numquam
+                                    consequuntur officia sint architecto, aspernatur, sunt facere
+                                    magni deserunt quam consequatur laboriosam eveniet iure eos
+                                    minus recusandae rerum placeat labore nihil natus sequi hic
+                                    quos repudiandae a eaque! Velit sunt consectetur et
+                                    voluptatibus minus culpa?
+                                </p>
+                            </div>
+
+                            <div
+                                class="tab-pane fade border-top border-bottom py-4"
+                                id="nav-information"
+                                role="tabpanel"
+                                aria-labelledby="nav-information-tab"
+                                >
+                                <p>
+                                    Elevate your living spaces with our exquisite collection of home decor and interior products. Immerse yourself in a world of timeless elegance and unparalleled craftsmanship as you explore our carefully curated selection. Each piece tells a unique story, blending form and function to transform your home into a haven of style and comfort. From the finest materials to meticulous design details, our products are crafted with passion and dedication. Discover the perfect harmony of aesthetics and utility, where every item is more than an addition to your space; it's a statement of refined taste and a celebration of the art of living. Explore our range and let your home reflect your distinctive sense of style.
+                                </p>
+                            </div>
+
+                            <div
+                                class="tab-pane fade border-top border-bottom py-4"
+                                id="nav-review"
+                                role="tabpanel"
+                                aria-labelledby="nav-review-tab"
+                                >
+                                <div class="review-box d-flex flex-wrap">
+                                    <div class="col-lg-6 d-flex flex-wrap">
+                                        <div class="col-md-2">
+                                            <div class="image-holder mb-3">
+                                                <img
+                                                    src="https://media.licdn.com/dms/image/D4D03AQHnR_BWAwk0sw/profile-displayphoto-shrink_800_800/0/1676106185687?e=2147483647&amp;v=beta&amp;t=aUg4EnNUwpeHo4CD5rKI93xty_wz_qk7qcVzT8QjgsI"
+                                                    class="img-fluid"
+                                                    />
+
+                                            </div>
+                                        </div>
+                                        <div class="col-md-9">
+                                            <div class="review-content">
+                                                <div class="review-header">
+                                                    <span class="author-name">
+                                                        <strong>Divya Bhavsar</strong>
+                                                    </span>
+                                                    <span class="review-date">- 16/09/2023</span>
+                                                </div>
+                                                <p>
+                                                    Vitae tortor condimentum lacinia quis vel eros donec ac.
+                                                    Nam at lectus urna duis convallis convallis
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-lg-6 d-flex flex-wrap">
+                                        <div class="col-md-2">
+                                            <div class="image-holder mb-3">
+                                                <img
+                                                    src="https://avatars.githubusercontent.com/u/135517020?v=4"
+                                                    class="img-fluid"
+                                                    />
+                                            </div>
+                                        </div>
+                                        <div class="col-md-9">
+                                            <div class="review-content">
+                                                <div class="review-header">
+                                                    <span class="author-name">
+                                                        <strong>Abhi Jariwala</strong>
+                                                    </span>
+                                                    <span class="review-date">- 16/09/2023</span>
+                                                </div>
+                                                <p>
+                                                    Vitae tortor condimentum lacinia quis vel eros donec ac.
+                                                    Nam at lectus urna duis convallis convallis
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="related-products">
+            <div class="container-lg">
+                <div class="row">
+                    <div class="display-header d-flex justify-content-between mb-5">
+                        <h2 class="display-6 text-dark fst-italic m-0">Related Products</h2>
+                        <div class="btn-right">
+                            <a href="#" class="btn btn-medium btn-dark">Go To Shop</a>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-3 col-md-6 col-sm-6 mb-5">
+                            <div class="product-item mx-auto">
+                                <div class="image-holder mb-2">
+                                    <img
+                                        src="https://thedecorkart.com/cdn/shop/products/DSC_2362_49264c85-085f-4620-9eb4-0cf564e74cb5_1000x1000.jpg?v=1630849358"
+                                        class="img-fluid"
+                                        alt=""
+                                        />
+                                </div>
+                                <div class="product-info text-center">
+                                    <h3 class="fst-italic m-0">
+                                        <a href="#" class="text-dark myFont"
+                                           >Aurum III Porcelain Countertop Basin</a
+                                        >
+                                    </h3>
+                                    <div class="product-price text-primary fw-medium">
+                                        ₹ 9,500.00
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-3 col-md-6 col-sm-6 mb-5">
+                            <div class="product-item mx-auto">
+                                <div class="image-holder mb-2">
+                                    <img
+                                        src="https://thedecorkart.com/cdn/shop/files/IMG_5866_726c2ef1-c47b-46de-a1e3-b16659df6ce7_1000x1000.jpg?v=1688641191"
+                                        class="img-fluid"
+                                        alt=""
+                                        />
+                                </div>
+                                <div class="product-info text-center">
+                                    <h3 class="fst-italic m-0">
+                                        <a href="#" class="text-dark myFont"
+                                           >Madeline Porcelain Counter Top Basin</a
+                                        >
+                                    </h3>
+                                    <div class="product-price text-primary fw-medium">
+                                        ₹ 14,500.00
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-3 col-md-6 col-sm-6 mb-5">
+                            <div class="product-item mx-auto">
+                                <div class="image-holder mb-2">
+                                    <img
+                                        src="https://thedecorkart.com/cdn/shop/products/DSC_2334_1000x1000.jpg?v=1630849425"
+                                        class="img-fluid"
+                                        alt=""
+                                        />
+                                </div>
+                                <div class="product-info text-center">
+                                    <h3 class="fst-italic m-0">
+                                        <a href="#" class="text-dark myFont"
+                                           >Golden Porcelain Countertop Basin</a
+                                        >
+                                    </h3>
+                                    <div class="product-price text-primary fw-medium">
+                                        ₹ 18,500.00
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-3 col-md-6 col-sm-6 mb-5">
+                            <div class="product-item mx-auto">
+                                <div class="image-holder mb-2">
+                                    <img
+                                        src="https://thedecorkart.com/cdn/shop/products/DSC_2329_1000x1000.jpg?v=1630849520"
+                                        class="img-fluid"
+                                        alt=""
+                                        />
+                                </div>
+                                <div class="product-info text-center">
+                                    <h3 class="fst-italic m-0">
+                                        <a href="#" class="text-dark myFont"
+                                           >Golden Porcelain Countertop Basin</a
+                                        >
+                                    </h3>
+                                    <div class="product-price text-primary fw-medium">
+                                        ₹ 16,500.00
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+                <script src="js/jquery.min.js"></script>
+        <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
+            crossorigin="anonymous"
+        ></script>
+        <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+        <script src="js/plugins.js"></script>
+        <script src="js/script.js"></script>
+            </ui:define>
+        </ui:composition>
+    </h:body>
+</html>

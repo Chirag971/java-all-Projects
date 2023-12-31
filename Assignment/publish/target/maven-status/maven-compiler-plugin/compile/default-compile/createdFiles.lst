@@ -1,0 +1,13 @@
+Entities\Subscription_.class
+Controller\publish.class
+Bean\AbstractFacade.class
+com\mycompany\publish\resources\JavaEE8Resource.class
+Bean\CustomerFacade.class
+com\mycompany\publish\JAXRSConfiguration.class
+Entities\Subscription.class
+Bean\AddressFacade.class
+Bean\SubscriptionFacade.class
+Entities\Customer.class
+Entities\Customer_.class
+Entities\Address_.class
+Entities\Address.class

@@ -1,0 +1,7 @@
+Bean\NewSessionBeanLocal.class
+servlet\pageVisit.class
+com\mycompany\assignment2\JAXRSConfiguration.class
+entities\PageVisits_.class
+com\mycompany\assignment2\resources\JavaEE8Resource.class
+Bean\NewSessionBean.class
+entities\PageVisits.class

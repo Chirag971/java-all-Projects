@@ -1,0 +1,5 @@
+servlet\calc.class
+com\mycompany\calculater\JAXRSConfiguration.class
+bean\calculater.class
+bean\calculaterLocal.class
+com\mycompany\calculater\resources\JavaEE8Resource.class

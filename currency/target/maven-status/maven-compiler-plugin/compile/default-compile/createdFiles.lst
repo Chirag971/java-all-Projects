@@ -1,0 +1,8 @@
+com\mycompany\currency\resources\JavaEE8Resource.class
+Bean\CurrencyBean.class
+Bean\CurrencyBeanLocal.class
+com\mycompany\currency\JAXRSConfiguration.class
+servlet\currency.class
+Entites\Currencyconversionrate.class
+Entites\Currencyconversionrate_.class
+servlet\result.class
