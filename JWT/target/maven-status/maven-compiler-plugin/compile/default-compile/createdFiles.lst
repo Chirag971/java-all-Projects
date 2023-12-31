@@ -1,0 +1,10 @@
+com\mycompany\jwt\resources\JavaEE8Resource.class
+jwtrest\JWTCredential.class
+servlet\register.class
+Entity\Registermaster.class
+jwtrest\Constants.class
+ejb\registerLocal.class
+jwtrest\TokenProvider.class
+com\mycompany\jwt\JAXRSConfiguration.class
+ejb\register.class
+Entity\Rolemaster.class

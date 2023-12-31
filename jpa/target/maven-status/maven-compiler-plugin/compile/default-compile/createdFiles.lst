@@ -1,0 +1,7 @@
+web\Employee_.class
+bean\EmployeeBean.class
+web\Employee.class
+bean\EmployeeBeanLocal.class
+com\mycompany\jpa\resources\JavaEE8Resource.class
+com\mycompany\jpa\JAXRSConfiguration.class
+servlet\getData.class
