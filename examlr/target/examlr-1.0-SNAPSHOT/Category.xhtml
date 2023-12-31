@@ -1,0 +1,46 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Facelet Title</title>
+    </h:head>
+    <h:body>
+        <f:view>
+
+
+            <h:form>
+                <h:commandLink value="Add Category" action="addCategory"/>
+                <h1><h:outputText value="Category"/></h1>
+                <h:dataTable value="#{categoryCDI.allCategory}" var="item">
+                    <h:column>
+                        <f:facet name="header">
+                            <h:outputText value="Cid"/>
+                        </f:facet>
+                        <h:outputText value="#{item.cid}"/>
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">
+                            <h:outputText value="Cname"/>
+                        </f:facet>
+                        <h:outputText value="#{item.cname}"/>
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">
+                            <h:outputText value="Options"/>
+                        </f:facet>
+                        <h:commandButton value="Delete" action="#{categoryCDI.deletecat(item.cid)}"/>
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">
+                            <h:outputText value="Options"/>
+                        </f:facet>
+                        <h:commandButton value="Update" action="#{categoryCDI.getByCid(item.cid)}"/>
+                    </h:column>
+                </h:dataTable>
+            </h:form>
+        </f:view>
+
+    </h:body>
+</html>

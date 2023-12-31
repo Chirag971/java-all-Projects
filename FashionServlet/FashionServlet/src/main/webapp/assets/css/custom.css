@@ -1,0 +1,22 @@
+.active{
+    font-weight: bolder;
+    text-decoration: underline;
+}
+
+.cimage{
+    width : 100%;
+    height : 650px;
+}
+
+.card-img-top{
+    width : 100%;
+    height : 250px
+}
+
+@media(max-width: 499px)
+{
+    .cimage{
+        width : 100%;
+        height : 200px;
+    }
+}

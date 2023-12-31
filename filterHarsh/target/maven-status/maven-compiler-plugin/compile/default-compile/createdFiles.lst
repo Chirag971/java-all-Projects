@@ -1,0 +1,11 @@
+ejb\logicBeanLocal.class
+filter\AuthernticationFilter.class
+com\mycompany\filterharsh\resources\JakartaEE8Resource.class
+servlet\register.class
+Entity\Usermaster_.class
+config\project.class
+com\mycompany\filterharsh\JakartaRestConfiguration.class
+Entity\Groupmaster_.class
+Entity\Groupmaster.class
+Entity\Usermaster.class
+ejb\logicBean.class

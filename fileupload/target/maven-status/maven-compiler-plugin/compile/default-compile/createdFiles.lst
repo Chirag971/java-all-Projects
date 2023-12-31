@@ -1,0 +1,3 @@
+com\mycompany\fileupload\JakartaRestConfiguration.class
+com\mycompany\fileupload\resources\JakartaEE8Resource.class
+cdi\FileUpploadBean.class

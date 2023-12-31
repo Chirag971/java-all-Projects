@@ -1,0 +1,4 @@
+Config.class
+com/mycompany/fashionservlet/crud.class
+com/mycompany/fashionservlet/resources/JakartaEE8Resource.class
+com/mycompany/fashionservlet/JakartaRestConfiguration.class

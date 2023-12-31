@@ -1,0 +1,7 @@
+Ejbs\HashBeanLocal.class
+servlet\hash.class
+com\mycompany\filter\JAXRSConfiguration.class
+Ejbs\HashBean.class
+com\mycompany\filter\resources\JavaEE8Resource.class
+Entity\Groupmaster.class
+Entity\Usermaster.class

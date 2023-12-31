@@ -1,0 +1,13 @@
+ejb\product.class
+ejb\productLocal.class
+com\mycompany\examlr\JAXRSConfiguration.class
+JPA\Product.class
+JPA\Category.class
+Rest\product.class
+Beand\CategoryCDI.class
+Client\productClient.class
+Beand\CategoryCDI$1.class
+com\mycompany\examlr\resources\JavaEE8Resource.class
+Beand\productCDI.class
+Beand\CategoryCDI$2.class
+Beand\productCDI$1.class
